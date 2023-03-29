@@ -22,11 +22,11 @@ def user_info(request):
                 respdata = user_data(uname)
                 dict1 = {}
                 if respdata:
-                    dict1['First Name'] = respdata.get('fname', '')
-                    dict1['Last Name'] = respdata.get('lname', '')
-                    dict1['Mobile Number'] = respdata.get('mobile', '')
-                    dict1['Email Id'] = respdata.get('email', '')
-                    dict1['Address'] = respdata.get('address', '')
+                    dict1['first_name'] = respdata.get('fname', '')
+                    dict1['last_name'] = respdata.get('lname', '')
+                    dict1['mobile_number'] = respdata.get('mobile', '')
+                    dict1['email_id'] = respdata.get('email', '')
+                    dict1['address'] = respdata.get('address', '')
                     if dict1:
                         resp['status'] = 'Success'
                         resp['status_code'] = '200'

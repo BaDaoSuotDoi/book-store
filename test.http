@@ -1,4 +1,4 @@
-POST http://10.1.48.35:3004/userregistration/
+POST http://192.168.52.131:3001/userregistration/
 Content-Type: application/json
 
 {
@@ -12,7 +12,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://10.1.48.35:3004/userinfo/
+POST http://192.168.52.131:3001/userinfo/
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
 
 ###
 
-POST http://10.1.48.35:3004/userlogin/
+POST http://192.168.52.131:3001/userlogin/
 Content-Type: application/json
 
 {
@@ -30,6 +30,35 @@ Content-Type: application/json
 }
 
 ###
-GET http://10.1.48.35:3005/book/list
+GET http://192.168.52.131:3002/book/list
+
+###
+POST http://192.168.52.131:3004/shipment_updates/
+Content-Type: application/json
+
+{
+    "first_name": "nghia",
+    "last_name": "nguyen",
+    "email_id": "nghia@gmail.com",
+    "mobile_number": "12345",
+    "address": "HN",
+    "product_id": 1,
+    "quantity": 10,
+    "payment_status": 1,
+    "transaction_id": "111"
+}
+
+###
+POST http://192.168.52.131:3003/initiate_payment/ 
+Content-Type: application/json
+
+{
+    "user_name": "nghia@gmail.com",
+    "product_id": 1,
+    "price": 12,
+    "quantity": 3,
+    "payment_mode": "visa",
+    "mobile_number": "123456"
+}
 
 

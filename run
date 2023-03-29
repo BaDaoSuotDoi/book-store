@@ -1,24 +1,24 @@
 #!/bin/bash
 ROOT_DIR="$HOME/Code/project/chap11"
-IP="10.1.48.35"
+IP="192.168.52.131"
 declare -A service0=(
     [name]='payment_service'
-    [port]='3001'
+    [port]='3003'
 )
 
 declare -A service1=(
-    [name]='product_service'
+    [name]='book_service'
     [port]='3002'
 )
 
 declare -A service2=(
     [name]='shipment_service'
-    [port]='3003'
+    [port]='3004'
 )
 
 declare -A service3=(
     [name]='user_service'
-    [port]='3004'
+    [port]='3001'
 )
 
 

@@ -13,29 +13,30 @@ def shipment_details_update(uname):
     user = paystat.objects.filter(username=uname)
     for data in user.values():
         data
-        ship_dict['Product Id'] = data['product_id']
-        ship_dict['Quantity'] = data['quantity']
-        ship_dict['Payment Status'] = data['status']
-        ship_dict['Transaction Id'] = data['id']
-        ship_dict['Mobile Number'] = data['mobile']
+        ship_dict['product_id'] = data['product_id']
+        ship_dict['quantity'] = data['quantity']
+        ship_dict['payment_status'] = data['status']
+        ship_dict['transaction_id'] = data['id']
+        ship_dict['mobile_number'] = data['mobile']
         
     # Get the user info.
-    url = 'http://127.0.0.1:8000/userinfo/'
+    url = 'http://192.168.52.131:3001/userinfo/'
     d1 = {}
-    d1["User Name"] = data['username']
+    d1["username"] = data['username']
     data = json.dumps(d1)
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, data=data, headers=headers)
     val1 = json.loads(response.content.decode('utf-8'))
-    ship_dict['First Name'] = val1['data']['First Name']
-    ship_dict['Last Name'] = val1['data']['Last Name']
-    ship_dict['Address'] = val1['data']['Address']
-    ship_dict['Email Id'] = val1['data']['Email Id']
-    
+    print(val1)
+    ship_dict['first_name'] = val1['data']['first_name']
+    ship_dict['last_name'] = val1['data']['last_name']
+    ship_dict['address'] = val1['data']['address']
+    ship_dict['email_id'] = val1['data']['email_id']
     # Call the shipment_updates API.
-    url = 'http://127.0.0.1:5000/shipment_updates/'
+    url = 'http://192.168.52.131:3004/shipment_updates/'
     data = json.dumps(ship_dict)
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, data=data, headers=headers)
     api_resp = json.loads(response.content.decode('utf-8'))
+    print(api_resp)
     return api_resp

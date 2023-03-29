@@ -29,15 +29,15 @@ def shipment_reg_update(request):
     if request.method == 'POST':
         if 'application/json' in request.META['CONTENT_TYPE']:
             val1 = json.loads(request.body)
-            fname = val1.get("First Name")
-            lname = val1.get("Last Name")
-            email = val1.get("Email Id")
-            mobile = val1.get("Mobile Number")
-            address = val1.get("Address")
-            product_id = val1.get("Product Id")
-            quantity = val1.get("Quantity")
-            payment_status = val1.get("Payment Status")
-            transaction_id = val1.get("Transaction Id")
+            fname = val1.get("first_name")
+            lname = val1.get("last_name")
+            email = val1.get("email_id")
+            mobile = val1.get("mobile_number")
+            address = val1.get("address")
+            product_id = val1.get("product_id")
+            quantity = val1.get("quantity")
+            payment_status = val1.get("payment_status")
+            transaction_id = val1.get("transaction_id")
             shipment_status = "ready to dispatch"
             resp = {}
             respdata = ship_data_insert(
