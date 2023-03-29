@@ -1,0 +1,35 @@
+POST http://10.1.48.35:3004/userregistration/
+Content-Type: application/json
+
+{
+    "first_name": "Nghia",
+    "last_name": "Nguyen",
+    "email": "nghia@gmail.com",
+    "mobile_number": "0123456789",
+    "password": "123",
+    "confirm_password": "123",
+    "address": "Ha Noi"
+}
+
+###
+POST http://10.1.48.35:3004/userinfo/
+Content-Type: application/json
+
+{
+    "username": "nghia@gmail.com"
+}
+
+###
+
+POST http://10.1.48.35:3004/userlogin/
+Content-Type: application/json
+
+{
+    "username": "nghia@gmail.com",
+    "password": "123"
+}
+
+###
+GET http://10.1.48.35:3005/book/list
+
+
