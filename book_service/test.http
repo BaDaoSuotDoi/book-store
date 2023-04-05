@@ -1,0 +1,10 @@
+GET http://10.1.48.35:3010/book/list
+
+###
+POST http://10.1.48.35:3010/book/update/quantity
+Content-Type: application/json
+
+{
+    "product_id": 1,
+    "quantity":10
+}

@@ -20,3 +20,18 @@ def get_list_book(request):
     print(temp)
     resp['books'] = temp
     return HttpResponse(json.dumps(resp), content_type='application/json')
+
+
+@csrf_exempt
+def update_quantity(request):
+    data = json.loads(request.body)
+    product_id = data.get('product_id', '')
+    quantity = data.get('quantity', '')
+    production = Book.objects.get(id= product_id)
+    resq = {}
+    
+    production.availability = production.availability - quantity
+    production.save()
+    resq['status'] =  True
+    resq['message'] =  "Update quantity"
+    return HttpResponse(json.dumps(resq), content_type='application/json')

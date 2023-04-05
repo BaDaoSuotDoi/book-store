@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from book_model.views import get_list_book
+from book_model.views import update_quantity
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('book/list', get_list_book),
+    path('book/update/quantity', update_quantity),
 ]
