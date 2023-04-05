@@ -1,0 +1,20 @@
+POST http://10.1.48.35:3010/cart/create
+
+{
+    "user_id": 1, 
+    "product_id": 1,
+    "quantity": 2,
+    "type": "stationery",
+    "created_at": "16:20:20 04/05/2023"
+}
+
+###
+GET http://10.1.48.35:3010/cart/list?status=cc
+
+###
+POST http://10.1.48.35:3010/cart/update/status
+
+{
+    "id": 5,
+    "status": "complete"
+}

@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from cart_model.views import get_list_cart
+from cart_model.views import create
+from cart_model.views import update_status
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cart/list', get_list_cart),
+    path('cart/create', create),
+    path('cart/update/status', update_status),
 ]
