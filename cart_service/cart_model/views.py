@@ -38,7 +38,7 @@ def create(request):
     ship_dict['quantity'] = quantity
     data = json.dumps(ship_dict)
     headers = {'Content-Type': 'application/json'}
-    requests.post('http://10.1.48.35:3002/book/update/quantity', data=data, headers=headers)
+    requests.post('http://192.168.52.131:3002/book/update/quantity', data=data, headers=headers)
     
     resq = {}
     resq['status'] = True

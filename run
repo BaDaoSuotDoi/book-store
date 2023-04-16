@@ -1,5 +1,5 @@
 #!/bin/bash
-ROOT_DIR="$HOME/Code/project/chap11"
+ROOT_DIR="$HOME/Code/myproject/book_store"
 IP="192.168.52.131"
 declare -A service0=(
     [name]='payment_service'
@@ -7,22 +7,31 @@ declare -A service0=(
 )
 
 declare -A service1=(
+    [name]='cart_service'
+    [port]='3005'
+).  
+
+declare -A service2=(
     [name]='book_service'
     [port]='3002'
 )
 
-declare -A service2=(
+declare -A service3=(
     [name]='shipment_service'
     [port]='3004'
 )
 
-declare -A service3=(
+declare -A service4=(
     [name]='user_service'
     [port]='3001'
 )
 
 
-
+declare -A service5=(
+    [name]='stationery_service'
+    [port]='3006'
+)
+.
 declare -n service
 for service in ${!service@};do 
     echo "$ROOT_DIR/${service[name]}"
@@ -30,7 +39,5 @@ for service in ${!service@};do
     python3 manage.py runserver $IP:${service[port]} &
 done
 
-cd $ROOT_DIR/client
-npm run dev
 
 netstat -plten |grep python3

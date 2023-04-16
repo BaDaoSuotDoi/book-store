@@ -1,18 +1,18 @@
-POST http://10.1.48.35:3010/cart/create
+POST http://192.168.52.131:3005/cart/create
 
 {
     "user_id": 1, 
     "product_id": 1,
     "quantity": 2,
-    "type": "stationery",
+    "type": "book",
     "created_at": "16:20:20 04/05/2023"
 }
 
 ###
-GET http://10.1.48.35:3010/cart/list?status=cc
+GET http://192.168.52.131:3005/cart/list?status=wait
 
 ###
-POST http://10.1.48.35:3010/cart/update/status
+POST http://192.168.52.131:3005/cart/update/status
 
 {
     "id": 5,

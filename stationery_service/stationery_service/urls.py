@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from stationery_model.views import get_list_stationery
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('stationery/list', get_list_stationery),
 ]
